@@ -59,7 +59,6 @@ async def delete_post(id:int):
     conn.commit()
     if not index_post:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"The id : {id} was not found please try again")
-
     return Response(status_code=status.HTTP_204_NO_CONTENT)
     
 @app.patch("/posts/{id}")
